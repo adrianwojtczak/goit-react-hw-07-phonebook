@@ -5,14 +5,17 @@
 label {
   display: block;
   margin-bottom: 5px;
+  padding: 5px 0;
 }
 
 input[type='text'],
 input[type='tel'] {
   width: 100%;
+  margin-top: 5px;
   padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border: 0 solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 button {
@@ -22,4 +25,5 @@ button {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  font-family: 'Eagle Lake', cursive;
 }

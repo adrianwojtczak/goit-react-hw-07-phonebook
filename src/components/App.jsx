@@ -10,7 +10,7 @@ import '../index.css';
 export const App = () => {
   return (
     <Provider store={store}>
-      <div style={{ maxWidth: '600px', padding: '0 20px', margin: '0 auto' }}>
+      <div className="wrapper">
         <h1>Phonebook</h1>
         <ContactForm />
         <h2>Contacts</h2>

@@ -15,7 +15,7 @@ const Filter = () => {
 
   return (
     <label className={styles.label}>
-      Filter contacts by name:
+      Filter contacts by name, M'lord:
       <input type="text" value={filter} onChange={handleChangeFilter} />
     </label>
   );
