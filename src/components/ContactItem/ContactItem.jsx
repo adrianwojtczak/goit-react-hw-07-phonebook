@@ -5,7 +5,7 @@ import styles from './ContactItem.module.css';
 const ContactItem = ({ contact, onDeleteContact }) => (
   <li className={styles.item}>
     <span className={styles.name}>
-      {contact.name}: {contact.number}
+      {contact.name}: {contact.phone}
     </span>
     <button
       type="button"

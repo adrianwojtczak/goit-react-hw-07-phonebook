@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
-import { nanoid } from 'nanoid';
+import { addNewContactAsync } from 'redux/contactsSlice';
 
 import styles from './ContactForm.module.css';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
 
   const dispatch = useDispatch();
 
@@ -15,21 +14,20 @@ const ContactForm = () => {
     const { name, value } = ev.target;
     if (name === 'name') {
       setName(value);
-    } else if (name === 'number') {
-      setNumber(value);
+    } else if (name === 'phone') {
+      setPhone(value);
     }
   };
 
   const handleSubmit = ev => {
     ev.preventDefault();
     const newContact = {
-      id: nanoid(),
       name,
-      number,
+      phone,
     };
-    dispatch(addContact(newContact));
+    dispatch(addNewContactAsync(newContact));
     setName('');
-    setNumber('');
+    setPhone('');
   };
 
   return (
@@ -51,8 +49,8 @@ const ContactForm = () => {
         Number
         <input
           type="tel"
-          name="number"
-          value={number}
+          name="phone"
+          value={phone}
           onChange={handleChange}
           className={styles.input}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
